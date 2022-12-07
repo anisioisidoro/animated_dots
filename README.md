@@ -1,35 +1,16 @@
 # jumping_dot
 
-Jumping Dot Indicator (null safety)
+A new Flutter project.
 
+## Getting Started
 
-![jumping dot](https://github.com/rezam92/jumping_dot/blob/main/example.gif)
+This project is a starting point for a Flutter application.
 
+A few resources to get you started if this is your first Flutter project:
 
-## Usage Jumping Dot
-To use this plugin, add jumping_dot as a 
-[dependency in your `pubspec.yaml` file](https://flutter.dev/platform-plugins).
+- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-#### Example usage :
-```
-class Example extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: JumpingDots(
-          color: Colors.yellow,
-          radius: 10,
-          numberOfDots: 3,
-          animationDuration = Duration(milliseconds: 200),
-        ),
-      ),
-    );
-  }
-}
-```
-
-## Getting Started flutter
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.

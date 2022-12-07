@@ -8,8 +8,8 @@ class DotWidget extends StatelessWidget {
 
   const DotWidget({
     Key? key,
-    @required this.color,
-    @required this.radius,
+    required this.color,
+    required this.radius,
   }) : super(key: key);
 
   @override
@@ -22,6 +22,14 @@ class DotWidget extends StatelessWidget {
   }
 }
 
+class ColorDot{
+
+final Color firstColor;
+final Color secondColor;
+
+  ColorDot({required this.firstColor, required this.secondColor});
+}
+
 /// Jumping Dot.
 ///
 /// [numberOfDots] number of dots,
@@ -30,7 +38,7 @@ class DotWidget extends StatelessWidget {
 /// [animationDuration] animation duration in milliseconds
 class JumpingDots extends StatefulWidget {
   final int numberOfDots;
-  final Color color;
+  final List<ColorDot>? listColor;
   final double radius;
   final double innerPadding;
   final Duration animationDuration;
@@ -47,8 +55,8 @@ class JumpingDots extends StatefulWidget {
     this.numberOfDots = 3,
     this.radius = 10,
     this.innerPadding = 2.5,
-    this.animationDuration = const Duration(milliseconds: 200),
-    this.color = const Color(0xfff2c300),
+    this.animationDuration = const Duration(milliseconds: 250),
+   required this.listColor,
     this.verticalOffset = -20,
   })  : assert(verticalOffset.isFinite,
             "Non-finite values cannot be set as an animation offset."),
@@ -131,7 +139,7 @@ class _JumpingDotsState extends State<JumpingDots>
                   child: Transform.translate(
                     offset: Offset(0, _animations[index].value),
                     child:
-                        DotWidget(color: widget.color, radius: widget.radius),
+                        DotWidget(color: _animationControllers![index].isAnimating? widget.listColor![index].firstColor: widget.listColor![index].secondColor, radius: widget.radius),
                   ),
                 );
               },
